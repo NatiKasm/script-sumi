@@ -8,15 +8,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #2241a6;
-      --accent: #ffbe00;
-      --bg: #f7f9fb;
-      --card-bg: #fff;
-      --heading: #14213d;
-      --text: #333;
-      --muted: #6c757d;
+      --primary: #0a1a36;        /* Deep navy blue */
+      --accent: #1e387c;         /* Slightly lighter dark blue for accent */
+      --bg: #10182a;             /* Very dark blue background */
+      --card-bg: #172341;        /* Card background - dark blue */
+      --heading: #e4edff;        /* Pale blue for headings */
+      --text: #c7d0e7;           /* Light blue-grey text */
+      --muted: #8ea1c7;
       --radius: 14px;
-      --shadow: 0 6px 24px rgba(34,65,166,0.08);
+      --shadow: 0 6px 24px rgba(14,30,60,0.19);
     }
     body {
       font-family: 'Montserrat', Arial, sans-serif;
@@ -27,7 +27,7 @@
     }
     nav {
       background: var(--card-bg);
-      box-shadow: 0 2px 10px rgba(34,65,166,0.04);
+      box-shadow: 0 2px 10px rgba(14,30,60,0.11);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -38,7 +38,7 @@
     }
     .logo {
       font-weight: 800;
-      color: var(--primary);
+      color: var(--heading);
       font-size: 1.6em;
       letter-spacing: 1.5px;
       display: flex;
@@ -62,8 +62,8 @@
       border-bottom: 2px solid transparent;
     }
     nav a:hover, nav a.active {
-      color: var(--primary);
-      border-bottom: 2px solid var(--accent);
+      color: var(--accent);
+      border-bottom: 2px solid var(--heading);
     }
     .container {
       max-width: 1050px;
@@ -75,7 +75,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 3em;
-      background: linear-gradient(120deg, #e6f0ff 0%, #fbfbff 100%);
+      background: linear-gradient(120deg, #202f4d 0%, #131c32 100%);
       border-radius: var(--radius);
       padding: 2.7em 2em 2.7em 2em;
       margin: 2em auto 2em auto;
@@ -107,13 +107,13 @@
       border: none;
       border-radius: var(--radius);
       padding: 0.9em 2.2em;
-      box-shadow: 0 2px 16px rgba(34,65,166,0.08);
+      box-shadow: 0 2px 16px rgba(14,30,60,0.14);
       cursor: pointer;
-      transition: background 0.22s, transform 0.08s;
+      transition: background 0.22s, transform 0.08s, color 0.2s;
       margin-top: 0.5em;
     }
     .cta-btn:hover {
-      background: var(--accent);
+      background: var(--heading);
       color: var(--primary);
       transform: translateY(-2px) scale(1.03);
     }
@@ -121,12 +121,12 @@
       flex: 1 1 240px;
       max-width: 340px;
       border-radius: var(--radius);
-      box-shadow: 0 2px 18px rgba(34,65,166,0.10);
+      box-shadow: 0 2px 18px rgba(14,30,60,0.18);
       object-fit: cover;
       min-width: 180px;
       aspect-ratio: 4 / 5;
-      background: #c2d9ff;
-      border: 3px solid #e6f0ff;
+      background: #29345a;
+      border: 3px solid #1c2946;
     }
     /* Testimonials / Slideshow */
     .slideshow-container {
@@ -134,7 +134,7 @@
       max-width: 530px;
       background: var(--card-bg);
       border-radius: var(--radius);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
       overflow: hidden;
       position: relative;
     }
@@ -153,7 +153,7 @@
       to { opacity: 1; transform: scale(1);}
     }
     .slide h3 {
-      color: var(--primary);
+      color: var(--accent);
       margin-bottom: 0.4em;
       font-size: 1.17em;
       font-weight: 700;
@@ -177,21 +177,21 @@
       height: 13px;
       width: 13px;
       margin: 0 5px;
-      background-color: #e6f0ff;
-      border: 2px solid var(--primary);
+      background-color: #1c2946;
+      border: 2px solid var(--accent);
       border-radius: 50%;
       display: inline-block;
       cursor: pointer;
       transition: background-color 0.2s;
     }
-    .dot.active { background-color: var(--accent); border-color: var(--primary);}
+    .dot.active { background-color: var(--heading); border-color: var(--accent);}
     /* About Section */
     .about {
-      background: #f2f7ff;
+      background: #172241;
       border-radius: var(--radius);
       padding: 2em 1.3em;
       margin-bottom: 2.3em;
-      box-shadow: 0 2px 12px rgba(34,65,166,0.04);
+      box-shadow: 0 2px 12px rgba(14,30,60,0.10);
       text-align: center;
     }
     .about h2 {
@@ -214,7 +214,7 @@
     .service-card {
       background: var(--card-bg);
       border-radius: var(--radius);
-      box-shadow: 0 2px 10px rgba(34,65,166,0.06);
+      box-shadow: 0 2px 10px rgba(14,30,60,0.15);
       padding: 2em 1.4em 1.5em 1.4em;
       width: 230px;
       min-width: 180px;
@@ -224,16 +224,17 @@
     }
     .service-card:hover {
       transform: translateY(-5px) scale(1.025);
-      box-shadow: 0 7px 24px rgba(34,65,166,0.10);
+      box-shadow: 0 7px 24px rgba(14,30,60,0.22);
     }
     .service-icon {
       font-size: 2.3em;
       margin-bottom: 0.7em;
       display: block;
+      color: var(--heading);
     }
     .service-card h3 {
       margin: 0.5em 0 0.3em 0;
-      color: var(--primary);
+      color: var(--accent);
       font-size: 1.19em;
       font-weight: 700;
     }
@@ -254,14 +255,14 @@
       margin-bottom: 1em;
     }
     .socials a {
-      color: var(--accent);
+      color: var(--heading);
       margin: 0 10px;
       text-decoration: none;
       font-size: 1.6em;
       transition: color 0.18s;
       vertical-align: middle;
     }
-    .socials a:hover { color: #fff; }
+    .socials a:hover { color: var(--accent); }
     /* Responsive Design */
     @media (max-width: 950px) {
       .container { padding: 0 0.5em; }
@@ -282,7 +283,6 @@
 <body>
   <nav>
     <div class="logo">
-      <span style="color:var(--accent);font-size:1.2em;">&#9997;</span> <!-- pencil icon -->
       Script Sumi
     </div>
     <ul>
@@ -295,14 +295,14 @@
   <div class="container">
     <!-- HERO SECTION WITH IMAGE + CALL TO ACTION -->
     <section class="hero-section">
-      <img class="hero-img" src="assets/hero.jpg" alt="Professional working at a desk" />
+      <img class="hero-img" src="https://cdn.pixabay.com/photo/2023/11/20/18/04/global-business-9062781_1280.png" alt="Global Business Illustration from Pixabay" />
       <div class="hero-content">
         <h1>Land Your Dream Job</h1>
         <p>
           Expert CV writing, cover letters, and business English coaching.<br>
-          <span style="color:var(--accent); font-weight:700;">Personalized.</span>
+          <span style="color:var(--heading); font-weight:700;">Personalized.</span>
           Effective.
-          <span style="color:var(--accent); font-weight:700;">Results-driven.</span>
+          <span style="color:var(--heading); font-weight:700;">Results-driven.</span>
         </p>
         <a href="contact.html"><button class="cta-btn">Get Started</button></a>
       </div>
@@ -336,7 +336,7 @@
     <section class="about">
       <h2>About Script Sumi</h2>
       <p>
-        At Script Sumi, we help professionals and job seekers stand out with personalized CV writing, compelling cover letters, and business English coaching. Whether you’re aiming for your first job, a career change, or advancement, we provide the tools and strategies to help you succeed confidently in today’s competitive market.
+        At Script Sumi, we help professionals and job seekers stand out with personalized CV writing, compelling cover letters, and business English coaching. Whether you’re aiming for your first job or striving for the next big promotion, our expert services are designed to give you an edge in today's competitive market.
       </p>
     </section>
 
@@ -368,15 +368,15 @@
     <div class="socials">
       <a href="https://linkedin.com/" aria-label="LinkedIn" title="LinkedIn">
         <!-- LinkedIn SVG -->
-        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.29c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.29h-3v-4.5c0-1.08-.02-2.46-1.5-2.46s-1.73 1.17-1.73 2.38v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.39-1.54 2.86-1.54 3.06 0 3.63 2.01 3.63 4.62v4.69z"/></svg>
+        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2[...]
       </a>
       <a href="https://twitter.com/" aria-label="Twitter" title="Twitter">
         <!-- Twitter SVG -->
-        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M24 4.557a9.9 9.9 0 0 1-2.828.775 4.93 4.93 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195A4.92 4.92 0 0 0 16.616 3c-2.725 0-4.93 2.206-4.93 4.93 0 .386.044.763.127 1.124C7.728 8.807 4.1 6.884 1.671 3.965c-.423.724-.666 1.562-.666 2.475 0 1.708.87 3.216 2.188 4.099a4.904 4.904 0 0 1-2.23-.616c-.054 2.385 1.693 4.615 4.188 5.104-.413.112-.849.171-1.297.171-.317 0-.626-.03-.927-.086.627 1.956 2.444 3.377 4.6 3.415A9.868 9.868 0 0 1 0 21.539c2.19 1.404 4.768 2.225 7.548 2.225 9.057 0 14.009-7.507 14.009-14.009 0-.213-.005-.425-.014-.636A10.012 10.012 0 0 0 24 4.557z"/></svg>
+        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M24 4.557a9.9 9.9 0 0 1-2.828.775 4.93 4.93 0 0 0 2.165-2.724c-.951.564-2.005.974-3[...]
       </a>
       <a href="#" aria-label="Instagram" title="Instagram">
         <!-- Instagram SVG -->
-        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.056 1.97.24 2.43.415a4.92 4.92 0 0 1 1.675 1.073 4.92 4.92 0 0 1 1.073 1.675c.175.46.359 1.26.415 2.43.058 1.266.069 1.646.069 4.851s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.415 2.43a4.92 4.92 0 0 1-1.073 1.675 4.92 4.92 0 0 1-1.675 1.073c-.46.175-1.26.359-2.43.415-1.266.058-1.646.069-4.851.069s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.43-.415a4.92 4.92 0 0 1-1.675-1.073 4.92 4.92 0 0 1-1.073-1.675c-.175-.46-.359-1.26-.415-2.43-.058-1.266-.069-1.646-.069-4.851s.012-3.584.07-4.85c.056-1.17.24-1.97.415-2.43a4.92 4.92 0 0 1 1.073-1.675A4.92 4.92 0 0 1 4.72 2.648c.46-.175 1.26-.359 2.43-.415C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072c-1.276.059-2.146.25-2.89.532-.817.31-1.507.72-2.197 1.41C1.234 2.33.823 3.02.514 3.837c-.282.744-.473 1.614-.532 2.89C-.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.059 1.276.25 2.146.532 2.89.31.817.72 1.507 1.41 2.197.69.69 1.38 1.1 2.197 1.41.744.282 1.614.473 2.89.532C8.332 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 1.276-.059 2.146-.25 2.89-.532.817-.31 1.507-.72 2.197-1.41.69-.69 1.1-1.38 1.41-2.197.282-.744.473-1.614.532-2.89C23.986 15.668 24 15.259 24 12c0-3.259-.014-3.668-.072-4.948-.059-1.276-.25-2.146-.532-2.89-.31-.817-.72-1.507-1.41-2.197-.69-.69-1.38-1.1-2.197-1.41-.744-.282-1.614-.473-2.89-.532C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm7.2-10.406a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.056 1.97.24 2.43.415a4.92 4.92 0 0 1 1.675[...]
       </a>
     </div>
     <p>&copy; 2025 Script Sumi &mdash; All rights reserved.</p>
