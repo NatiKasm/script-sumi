@@ -12,13 +12,85 @@
     .container { max-width: 900px; margin: auto; padding: 2em 1em; }
     header { text-align: center; margin-bottom: 2em; }
     h1 { color: #00274d; margin-bottom: 0.2em; }
+    .hero-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2em;
+      background: #e6f0ff;
+      border-radius: 16px;
+      padding: 2em 1em 2.5em 1em;
+      margin-bottom: 2em;
+      box-shadow: 0 4px 18px rgba(0,39,77,0.08);
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      max-width: 430px;
+      text-align: left;
+    }
+    .hero-section h2 { margin: 0 0 0.4em 0; color: #00274d; font-size: 2em; }
+    .hero-img {
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(0,39,77,0.07);
+      width: 240px;
+      max-width: 90vw;
+      object-fit: cover;
+    }
+    .slideshow-container {
+      position: relative;
+      margin: 0 auto 2em auto;
+      max-width: 600px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+    .slide {
+      display: none;
+      padding: 2em 2em 1.5em 2em;
+      text-align: center;
+    }
+    .slide.active {
+      display: block;
+      animation: fadein 0.7s;
+    }
+    @keyframes fadein {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .slide h3 { color: #00274d; margin-bottom: 0.6em;}
+    .slide p { font-size: 1.07em; }
+    .dots {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    .dot {
+      height: 13px;
+      width: 13px;
+      margin: 0 4px;
+      background-color: #e6f0ff;
+      border: 2px solid #00274d;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .dot.active { background-color: #ffbe00; }
     .about { background: #e6f0ff; border-radius: 8px; padding: 1.5em; margin-bottom: 2em; }
     .services { display: flex; flex-wrap: wrap; gap: 1em; margin-bottom: 2em; justify-content: center; }
     .service-card { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 1.2em 1em; width: 220px; text-align: left; }
     .service-card h3 { margin: 0.5em 0 0.3em 0; color: #00274d; }
     footer { background: #00274d; color: #fff; text-align: center; padding: 1em 0; margin-top: 2em; font-size: 15px; }
     .socials a { color: #ffbe00; margin: 0 8px; text-decoration: none; font-size: 18px; }
-    @media (max-width: 700px) { .services { flex-direction: column; align-items: center; } .service-card { width: 90%; } }
+    @media (max-width: 900px) {
+      .hero-section { flex-direction: column; gap: 1.5em; padding: 1.3em 1em 1.7em 1em;}
+      .hero-text { max-width: 100%; text-align: center;}
+    }
+    @media (max-width: 700px) {
+      .services { flex-direction: column; align-items: center; } 
+      .service-card { width: 90%; }
+      .slideshow-container { max-width: 96vw;}
+    }
   </style>
 </head>
 <body>
@@ -29,14 +101,51 @@
     <a href="contact.html">Contact</a>
   </nav>
   <div class="container">
+    <!-- HERO SECTION WITH IMAGE -->
+    <section class="hero-section">
+      <img class="hero-img" src="assets/hero.jpg" alt="Professional working at a desk" />
+      <div class="hero-text">
+        <h2>Land Your Dream Job with Script Sumi</h2>
+        <p>
+          Expert CV writing, cover letters, and business English coaching. <br>
+          <span style="color:#ffbe00; font-weight:600;">Personalized.</span> Effective. <span style="color:#ffbe00; font-weight:600;">Results-driven.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDESHOW -->
+    <div class="slideshow-container">
+      <div class="slide active">
+        <h3>“My new CV got me interviews within a week!”</h3>
+        <p>Script Sumi transformed my outdated resume into a modern, eye-catching document. Highly recommended!<br>
+        <span style="color:#00274d; font-weight: 600;">— Sarah, Marketing Manager</span></p>
+      </div>
+      <div class="slide">
+        <h3>Business English That Works</h3>
+        <p>The coaching sessions gave me the confidence to communicate clearly in meetings and emails.<br>
+        <span style="color:#00274d; font-weight: 600;">— Daniel, Project Lead</span></p>
+      </div>
+      <div class="slide">
+        <h3>One-Stop Career Shop</h3>
+        <p>From CV to cover letter to strategy, Script Sumi supported every step of my job hunt.<br>
+        <span style="color:#00274d; font-weight: 600;">— Priya, Analyst</span></p>
+      </div>
+      <div class="dots">
+        <span class="dot active" onclick="showSlide(0)"></span>
+        <span class="dot" onclick="showSlide(1)"></span>
+        <span class="dot" onclick="showSlide(2)"></span>
+      </div>
+    </div>
+
     <header>
       <h1>Welcome to Script Sumi</h1>
       <p>Professional CV & Business English services</p>
     </header>
+
     <section class="about">
       <h2>About Script Sumi</h2>
       <p>
-        At Script Sumi, we assist professionals and job seekers with personalized CV writing, cover letters, business English coaching, and more. Whether you’re looking to land your dream job or enhance your business communication, our services are tailored to deliver impactful results.
+        At Script Sumi, we assist professionals and job seekers with personalized CV writing, cover letters, business English coaching, and more. Whether you’re looking to land your dream job or enhance your career, we’re here to help you stand out.
       </p>
     </section>
     <section class="services">
@@ -66,5 +175,25 @@
     </div>
     <p>&copy; 2025 Script Sumi &mdash; All rights reserved.</p>
   </footer>
+  <script>
+    // Simple slideshow script
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(idx) {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
+      currentSlide = idx;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    // Auto-advance slides
+    setInterval(() => {
+      let next = (currentSlide + 1) % slides.length;
+      showSlide(next);
+    }, 4800);
+  </script>
 </body>
 </html>
